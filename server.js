@@ -43,7 +43,8 @@ app.get('/about', (req, res) => {
   });
 });
 
-app.get('/projects', (req, res) => {
+app.get('/djl', (req, res) => {
+  console.log("within the projects route");
   res.render('projects.hbs', {
     projectsPageMessage: "this is my projects page"
   });
@@ -57,4 +58,4 @@ app.get('/bad', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server running on the port ${port}`); 
-});
+})
