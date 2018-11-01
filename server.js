@@ -43,7 +43,7 @@ app.get('/about', (req, res) => {
   });
 });
 
-app.get('/djl', (req, res) => {
+app.get('/projects', (req, res) => {
   console.log("within the projects route");
   res.render('project.hbs', {
     projectsPageMessage: "this is my projects page"
