@@ -43,6 +43,12 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    projectsPageMessage: "this is my projects page"
+  });
+});
+
 app.get('/bad', (req, res) => {
   res.send({
     errorMessage: "this is a invalid route"
