@@ -1,14 +1,10 @@
 const express = require('express');
-const hbs = require('hbs');
-
 const port = process.env.PORT || 3000;
-
 
 var app = express();
 
-hbs.registerPartials(__dirname + '/views/partials');
-app.use(express.static(__dirname + '/public'));
-app.set('view engine', 'hbs');
+app.use(express.static(__dirname));
+app.set('view engine', 'ejs');
 
 app.use((req, res, next) => {
   var now = new Date().toString();
@@ -16,38 +12,27 @@ app.use((req, res, next) => {
   next();
 });
 
-//app.use((req, res, next) => {
-//  res.render('maintenance.hbs');
-//});
-
-app.use(express.static(__dirname + '/public'));
-
-hbs.registerHelper('getCurrentYear', () => {
-  return new Date().getFullYear();
-});
-
-hbs.registerHelper('uc', (inText) => {
-  return inText.toUpperCase(); 
-});
-
 app.get('/', (req, res) => {
-  res.render('home.hbs', {
+  res.render('home.ejs', {
     pageTitle: "The home page",
     welcomeMessage: "oh hi, welcome, welcome"
   });
 });
 
 app.get('/about', (req, res) => {
-  res.render('about.hbs', {
+  res.render('about.ejs', {
     pageTitle: "The about page",
   });
 });
 
 app.get('/projects', (req, res) => {
-  console.log("within the projects route");
-  res.render('project.hbs', {
+  res.render('project.ejs', {
     projectsPageMessage: "this is my projects page"
   });
+});
+
+app.get('/sw.js', (req, res) => {
+  res.sendFile('sw.js');
 });
 
 app.get('/bad', (req, res) => {
