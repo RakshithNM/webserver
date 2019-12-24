@@ -1,0 +1,21 @@
+{
+  "short_name": "epwa",
+  "name": "expresss pwa",
+  "icons": [
+    {
+      "src": "./192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "http://localhost:3000",
+  "background_color": "#3367D6",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#3367D6"
+}
