@@ -1,6 +1,14 @@
 const express = require('express');
 const port = process.env.PORT || 3000;
 
+const fs = require('fs');
+var http = require('http');
+var https = require('https');
+var privateKey = fs.readFileSync('server.key', 'utf8');
+var certificate = fs.readFileSync('server.crt', 'utf8');
+
+var credentials = {key: privateKey, cert: certificate};
+
 var app = express();
 
 app.use(express.static(__dirname));
@@ -41,6 +49,8 @@ app.get('/bad', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server running on the port ${port}`); 
-})
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(8080);
+httpsServer.listen(8443);
