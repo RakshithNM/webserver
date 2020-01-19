@@ -1,5 +1,4 @@
 const express = require('express');
-const port = process.env.PORT || 3000;
 
 const fs = require('fs');
 var http = require('http');

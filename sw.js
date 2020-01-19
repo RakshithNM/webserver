@@ -1,7 +1,7 @@
 "use strict";
 
-const version = 4;
-var cacheName = `ramblings-${version}`;
+const version = 5;
+var cacheName = `express-sample-${version}`;
 
 var urlsToCache = [
   '/',
@@ -96,8 +96,8 @@ async function cacheFiles(forceReload = false) {
 async function clearCaches() {
   var cacheNames = await caches.keys();
   var oldCacheNames = cacheNames.filter(function matchOldCache(cacheName) {
-    if(/^ramblings-\d+$/.test(cacheName)) {
-      let [, cacheVersion] = cacheName.match(/^ramblings-(\d+)$/);
+    if(/^express-sample-\d+$/.test(cacheName)) {
+      let [, cacheVersion] = cacheName.match(/^express-sample-(\d+)$/);
       cacheVersion = (cacheVersion != null) ? Number(cacheVersion) : cacheVersion;
       return (cacheVersion > 0 && cacheVersion != version); 
     }
