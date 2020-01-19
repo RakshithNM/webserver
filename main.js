@@ -24,12 +24,15 @@
   initServiceWorker().catch(console.error);
 
   async function initServiceWorker() {
+    //Register a service worker
     swRegistration = await navigator.serviceWorker.register("/sw.js", {
       updateViaCache: "none"
     });
 
+    //Three state the service worker can be in
     svcworker = swRegistration.installing || swRegistration.waiting || swRegistration.active;
 
+    //Every time a new service worker has taken control of the page
     navigator.serviceWorker.addEventListener("controllerchange", function onController() {
       svcworker = navigator.serviceWorker.controller;
     });

@@ -9,6 +9,7 @@ var urlsToCache = [
   '/projects',
 ];
 
+//Service worker events
 self.addEventListener("install", onInstall);
 self.addEventListener("activate", onActivate);
 self.addEventListener("fetch", onFetch);
@@ -20,8 +21,10 @@ async function main() {
   await cacheFiles();
 }
 
+//Install event handler
 async function onInstall() {
   console.log(`Service worker (${version}) installed`);
+  //Once installed enter the  active state, no waiting for the previous service worker to shut down
   self.skipWaiting();
 }
 
@@ -57,11 +60,13 @@ async function router(req) {
 }
 
 async function onActivate(evt) {
+  //Tell the browser not to shutdown until the handleActivation function is done its work
   evt.waitUntil(handleActivation());
 }
 
 async function handleActivation() {
   await clearCaches();
+  /* Handle the case of when the service worker changes and there are more tabs controlled by the service worker and tell the open clients to be claimed by the new service worker */
   await clients.claim();
   await cacheFiles(/*forceReload*/true);
   console.log(`Service Worker (${version}) activated.`);
