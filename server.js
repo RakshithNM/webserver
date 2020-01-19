@@ -48,6 +48,11 @@ app.get('/bad', (req, res) => {
   });
 });
 
+//Redirects for http request
+app.get("*", function(req, res) {
+  res.redirect('https://' + req.headers.host + req.url);
+})
+
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
