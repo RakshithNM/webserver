@@ -56,5 +56,5 @@ app.get("*", function(req, res) {
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(8080);
-httpsServer.listen(8443);
+httpServer.listen(process.env.PORT || 8080);
+httpsServer.listen(process.env.PORT || 8443);
