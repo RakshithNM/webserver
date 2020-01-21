@@ -13,7 +13,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "index.ejs",
+  "start_url": "/",
   "background_color": "black",
   "display": "fullscreen",
   "scope": "/",
