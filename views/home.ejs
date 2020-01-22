@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="Description" content="Express js pwa app">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#3367d6">
-  <title>Express PWA</title>
-  <link rel="manifest" href="../manifest.json">
-</head>
-<body>
-<h1>this is the home route</h1>
-<a href="/projects">projects</a>
-<a href="/about">about</a>
-<script src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="Description" content="Express js pwa app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#3367d6">
+    <title>Express PWA</title>
+    <link rel="manifest" href="../manifest.json">
+    <script src="db.js"></script>
+  </head>
+  <body>
+    <h1>this is the home route</h1>
+    <a href="/projects">projects</a>
+    <a href="/about">about</a>
+    <hr>
+    <div id="textbox" style="display:flex; flex-direction: column">
+      <textarea id="newmessage"></textarea>
+      <button onclick="submitMessage()">Add message</button>
+    </div>
+    <div id="notes"></div>
+    <script src="main.js"></script>
+  </body>
 </html>
