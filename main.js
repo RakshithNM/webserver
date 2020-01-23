@@ -1,4 +1,4 @@
-(function portfolio() {
+(function expresspwa() {
   var isOnline = ("onLine" in navigator) ? navigator.onLine : true;
   var swRegistration;
   var svcworker;

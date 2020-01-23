@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#3367d6">
     <title>Express PWA</title>
     <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png"> 
     <script src="db.js"></script>
   </head>
   <body>
@@ -15,6 +16,7 @@
     <a href="/about">about</a>
     <hr>
     <div id="textbox" style="display:flex; flex-direction: column">
+      <label for="newmessage">Add a new message</label>
       <textarea id="newmessage"></textarea>
       <button onclick="submitMessage()">Add message</button>
     </div>
