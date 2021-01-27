@@ -1,0 +1,51 @@
+{
+  "applinks": {
+    "apps": [
+      
+    ],
+    "details": [
+      {
+        "appID": "88M5C3GJL6.com.one97.paytm.all",
+        "paths": [
+          "/",
+          "/bus-tickets/*",
+          "/care",
+          "/cart",
+          "/datacard-recharge",
+          "/digitalgold",
+          "/dth-recharge",
+          "/electricity-bill-payment",
+          "/electricity-bill-payment/*",
+          "/flights/*",
+          "/movies/*",
+          "/nearby",
+          "/freemovies",
+          "/gas-bill-payment",
+          "/hotels",
+          "/landline-bill-payment",
+          "/metro-card-recharge",
+          "/myorders",
+          "/paytmcash",
+          "/paytmwallet",
+          "/recharge",
+          "/settings",
+          "/shop/h/gift-cards",
+          "/toll-tag-recharge",
+          "/train-tickets",
+          "/shop/*",
+	  "/events/*",
+          "/cylinder-gas-recharge",
+          "/buy-insurance",
+          "/buy-insurance/*"
+        ]
+      }
+    ]
+  },
+"appclips": {
+        "apps": [
+            "88M5C3GJL6.com.one97.paytm.all"
+        ]
+    }
+}
+
+
